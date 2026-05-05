@@ -15,11 +15,13 @@ public class driverfactory {
         if (driver.get() == null) {
 
             if (browser.equalsIgnoreCase("Chrome")) {
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                driver.set(new ChromeDriver(options));
+                 ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless=new");
+                    options.addArguments("--no-sandbox");
+                    options.addArguments("--disable-dev-shm-usage");
+                    options.addArguments("--window-size=1920,1080");   
+                    options.addArguments("--disable-gpu");             
+                    driver.set(new ChromeDriver(options));
 
             } else if (browser.equalsIgnoreCase("Firefox")) {
                 FirefoxOptions options = new FirefoxOptions();
