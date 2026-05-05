@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Test Cases Suite" parallel="tests" thread-count="2">
 
-    <!-- Fresh browser for EACH test method -->
     <test name="Method Mode">
+        <parameter name="browser" value="chrome"/>
         <parameter name="executionMode" value="method"/>
         <classes>
-            <class name="tests.IndependentTests"/>
+            <class name="com.automation.Testcase1"/>
         </classes>
     </test>
 
-    <!-- Shared browser, sequential, dependsOnMethods works -->
     <test name="Class Mode">
+        <parameter name="browser" value="chrome"/>
         <parameter name="executionMode" value="class"/>
         <classes>
-            <class name="tests.SequentialTests"/>
+            <class name="com.automation.Testcase1"/>
         </classes>
     </test>
 
