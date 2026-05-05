@@ -1,17 +1,25 @@
-<test name="Method Mode">
-    <parameter name="executionMode" value="method"/>
-    <classes>
-        <class name="tests.TabTestCases"/>
-    </classes>
-</test>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Cases Suite" parallel="tests" thread-count="2">
 
-<test name="Class Mode">
-    <parameter name="executionMode" value="class"/>
-    <classes>
-        <class name="tests.TabTestCases"/>
-    </classes>
-</test>
+    <!-- Fresh browser for EACH test method -->
+    <test name="Method Mode">
+        <parameter name="executionMode" value="method"/>
+        <classes>
+            <class name="tests.IndependentTests"/>
+        </classes>
+    </test>
 
-<listeners>
-    <listener class-name="com.automation.Listener"/>
-</listeners>
+    <!-- Shared browser, sequential, dependsOnMethods works -->
+    <test name="Class Mode">
+        <parameter name="executionMode" value="class"/>
+        <classes>
+            <class name="tests.SequentialTests"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.automation.Listener"/>
+    </listeners>
+
+</suite>

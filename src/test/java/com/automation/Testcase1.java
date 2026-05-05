@@ -24,11 +24,13 @@ public class Testcase1 {
 
     @Test(priority=1, description="validation url opening")
     public void openbrowser(){ 
-        //click on about button
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("navbarDropdown"))).click();
+        //click on about button — FIXED LOCATOR
+        wait.until(ExpectedConditions.elementToBeClickable(
+            By.xpath("//li[contains(@class,'nav-item')]//a[text()='About']"))).click();
             
         //click on anyone option from dropdown 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='About Selenium']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(
+            By.xpath("//a[text()='About Selenium']"))).click();
     }
 
     @Test(priority=2, description="Validating all tab")
@@ -40,5 +42,4 @@ public class Testcase1 {
     public void closedriver(){
         drivermanager.quitDriver();
     }
-
 }
