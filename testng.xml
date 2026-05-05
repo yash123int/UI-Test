@@ -1,0 +1,17 @@
+<test name="Method Mode">
+    <parameter name="executionMode" value="method"/>
+    <classes>
+        <class name="tests.TabTestCases"/>
+    </classes>
+</test>
+
+<test name="Class Mode">
+    <parameter name="executionMode" value="class"/>
+    <classes>
+        <class name="tests.TabTestCases"/>
+    </classes>
+</test>
+
+<listeners>
+    <listener class-name="com.automation.Listener"/>
+</listeners>
